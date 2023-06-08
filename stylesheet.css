@@ -1,0 +1,14 @@
+.grid{
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    gap: 1px;
+    width: 00px;
+    height: 100px;
+}
+
+.square{
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+}
