@@ -21,13 +21,13 @@ body{
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);
-    gap: 1px;
-    width: auto;
-    height: auto;
+    gap: 0px;
+    width: 500px;
+    height: 500px;
 }
 
 .square{
-    width: 25px;
-    height: 25px;
+    width: auto;
+    height: auto;
     background-color: black;
 }

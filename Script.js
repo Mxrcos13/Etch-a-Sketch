@@ -1,9 +1,26 @@
 const grid = document.querySelector('.grid');
 
-for(let i = 0; i < 16 * 16; i++){
-    const div = document.createElement('div');
-    div.classList.add('square');
-    grid.appendChild(div);
+function updateGrid(){
+    clearGrid();
+    let size = document.querySelector('#slider').value;
+    grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+    for(let i = 0; i < size * size; i++){
+        const div = document.createElement('div');
+        div.classList.add('square');
+        grid.appendChild(div);
+    }
+    const squares = document.querySelectorAll('.square');
+    squares.forEach(square => {
+      square.addEventListener('mouseover', paint);
+    });
+}
+
+function clearGrid(){
+    const squares = document.querySelectorAll('.square');
+    squares.forEach(square => {
+        square.remove();
+    })
 }
 
 function getColor(){
@@ -16,7 +33,6 @@ function paint(e){
     selector.style.backgroundColor = `${color}`;
 }
 
-const squares = document.querySelectorAll('.square');
-squares.forEach(square => {
-    square.addEventListener('mouseover', paint);
-});
+const slider = document.querySelector('#slider');
+updateGrid();
+slider.addEventListener('input', updateGrid);
