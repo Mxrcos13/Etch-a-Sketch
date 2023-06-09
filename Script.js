@@ -5,9 +5,15 @@ for(let i = 0; i < 16 * 16; i++){
     div.classList.add('square');
     grid.appendChild(div);
 }
+
+function getColor(){
+    return document.querySelector('.colorpicker').value;
+}
+
 function paint(e){
     const selector = e.target;
-    selector.style.backgroundColor = 'green';
+    let color = getColor(); 
+    selector.style.backgroundColor = `${color}`;
 }
 
 const squares = document.querySelectorAll('.square');
