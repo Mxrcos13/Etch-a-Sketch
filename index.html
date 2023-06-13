@@ -10,8 +10,15 @@
     <div class="header">Etch-a-Sketch</div>
     <div class="main">
         <div class="settings">
-            <div class="color">color<input type="color" class="colorpicker"></div>
-            <div class = "size"><input type="range" id="slider" min="1" max="100" value="50" onchange="updateGrid()"></div>       
+            <div class="color">
+                color
+                <input type="color" class="colorpicker" value="#808080">
+            </div>
+            <button class="clear">clear</button>
+            <div class = "size">
+                <div class="range">value</div>
+                <input type="range" id="slider" min="1" max="100" value="50" onchange="updateGrid()">
+            </div>
         </div>
         <div class="grid"></div>
     </div>
