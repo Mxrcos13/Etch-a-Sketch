@@ -17,7 +17,6 @@ function updateGrid(){
     const squares = document.querySelectorAll('.square');
     squares.forEach(square => {
         if (isRainbow) {
-            console.log('test');
             square.addEventListener('mouseover', rainbowPaint);
         } else {
             square.addEventListener('mouseover', paint);
@@ -49,7 +48,7 @@ function paint(e){
 }
 
 function rainbowPaint(e){
-    let rand = Math.floor(Math.floor(Math.random() * 5));
+    let rand = Math.floor(Math.floor(Math.random() * 6));
     let color;
     switch(rand){
         case 0:
@@ -67,6 +66,8 @@ function rainbowPaint(e){
         case 4:
             color = 'purple';
             break;
+        case 5:
+            color = 'blue';
     }
     const selector = e.target;
     selector.style.backgroundColor = `${color}`;
@@ -85,7 +86,7 @@ function switchToStaticMode() {
 function clearButtonFunc(){
     const squares = document.querySelectorAll('.square');
     squares.forEach(square => {
-        square.style.backgroundColor = 'black';
+        square.style.backgroundColor = 'white';
     }) 
 }
 const clearButton = document.querySelector('.clear')
